@@ -1,213 +1,33 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <link rel="icon" type="image/png" href="img/MATH ACADEMY.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  MATH ACADEMY </title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
+    <title>الصيانة</title>
     <style>
-        * {
-            font-family: 'Cairo', sans-serif;
-        }
         body {
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            direction: rtl;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden; /* لمنع تحرك الصفحة أفقيًا */
-            
-        }
-
-        header {
-            background: #0575E6;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 1em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            font-weight: bold;
-        }
-
-        /* تنسيق الخط المشع */
-        .glowing-line {
-            width: 100%;
-            height: 4px;
-            background-color: white;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-            border: none;
-            margin: 0;
-        }
-
-        nav {
-            background: #0575E6;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            color: white;
+            background-color: #E0F7FA; /* Calm background color */
+            color: #333; /* Text color */
             display: flex;
             justify-content: center;
-            padding: 10px 0;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-
-        nav a:hover {
-            color: #ff5722;
-            text-decoration: none;
-
-        }
-
-        h1 {
-            color: #333;
-            font-size: 1.5em;
-            margin: 30px 0;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .universities {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-grow: 1;
-        }
-
-        .university-card {
-            background-color: #343a40; /* لون رسمي موحد */
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .university-card img {
-            max-width: 100px;
-            margin-bottom: 15px;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-            margin-top: -10px; /* يرفع الشعار قليلاً إلى الأعلى */
-        }
-
-        .university-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .university-card h2 {
-            font-size: 1em;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .university-card p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-
-        .university-card button {
-            font-size: 1.2em;
-            color: #0575E6;
-            background-color: white;
-            border: 3px solid #0575E6;
-            padding: 12px 40px;
-            border-radius: 70px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .university-card button:hover {
-            background-color:#4d0040;
-            color: white;
-        }
-
-        footer {
-            background: #0575E6;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 20px;
-        }
-                footer p {
+            height: 100vh;
             margin: 0;
-            
-            font-size: 1em;
+            font-family: Arial, sans-serif;
+        }
+        .maintenance-message {
+            text-align: center;
+            font-size: 24px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <header>
-        😊 إتقان الرياضيات - طريقك للتميز والنجاح 😊
-    </header>
-    
-
-    <!-- إضافة الخط الأبيض المشع -->
-    <hr class="glowing-line">
-
-    <nav>
-        <a href="index.html">الصفحة الرئيسية</a>
-        <a href="services.html">خدماتي</a>
-        <a href="Summaries.html">الملخصات</a>
-        <a href="https://wa.me/967711848728">تواصل معي</a>
-    </nav>
-
-    <h1>صفحة التحكم</h1>
-
-    <div class="universities">
-        <div class="university-card" style="background: linear-gradient(to right, #0f0c29, #670db6); color:white;">
-            <img src="img/news-505.jpg" alt="شعار جامعة القصيم">
-            <h2>شروحات جامعة القصيم</h2>
-            <p>اطلع على جميع الشروحات الخاصة بجامعة القصيم</p>
-            <a href="Al-Qassim.html"><button>دخول</button></a>
-        </div>
-        <div class="university-card" style="background: linear-gradient(to left, #636363, #a2ab58); color:white;">
-            <img src="img/tife.jpg" alt="شعار جامعة الطائف">
-            <h2>شروحات جامعة الطائف</h2>
-            <p>اطلع على جميع الشروحات الخاصة بجامعة الطائف</p>
-            <a href="Taif.html"><button>دخول</button></a>
-
-        </div>
-        <div class="university-card" style="background: linear-gradient(to right, #000046, #1cb5e0); color:white;">
-            <img src="img/hail.jpg" alt="شعار جامعة حائل">
-            <h2>شروحات جامعة حائل</h2>
-            <p>اطلع على جميع الشروحات الخاصة بجامعة حائل</p>
-            <a href="Hail.html"><button>دخول</button></a>
-
-        </div>
- 
+    <div class="maintenance-message">
+        🚧 🔧 الموقع في حالة صيانة حالياً. شكراً لتفهمكم. ⏳ 🛠️
     </div>
-
-    <footer>
-        <p>  جميع الحقوق محفوظة لدى  || منصة ماث اكاديمي  2024</p>
-    </footer>
 </body>
 </html>
