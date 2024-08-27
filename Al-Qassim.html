@@ -2,18 +2,17 @@
 <html lang="ar">
 <head>
     <link rel="icon" type="image/png" href="img/MATH ACADEMY.jpg">
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  MATH ACADEMY </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>MATH ACADEMY</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-                * {
-        font-family: 'Cairo', sans-serif;
-        
-    }
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f7f7;
@@ -23,18 +22,17 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            overflow-x: hidden; /* يمنع ظهور الشريط الأفقي */
         }
 
         header {
-            background: #0575E6;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-               
+            background: #0575E6;
+            background: -webkit-linear-gradient(to left, #021B79, #0575E6);
+            background: linear-gradient(to left, #021B79, #0575E6);
             color: white;
             text-align: center;
             padding: 20px;
-            font-size: 1em;
+            font-size: 1.2em;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             font-weight: bold;
         }
@@ -47,15 +45,16 @@ background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Fi
             border: none;
             margin: 0;
         }
-        nav {
-            background: #0575E6;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+        nav {
+            background: #0575E6;
+            background: -webkit-linear-gradient(to left, #021B79, #0575E6);
+            background: linear-gradient(to left, #021B79, #0575E6);
             color: white;
             display: flex;
             justify-content: center;
             padding: 10px 0;
+            flex-wrap: wrap; /* يسمح بتغيير الصفوف عند الحاجة */
         }
 
         nav a {
@@ -63,21 +62,21 @@ background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Fi
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.8em;
+            font-size: 0.9em;
         }
 
         nav a:hover {
             color: #ff5722;
             text-decoration: none;
-
         }
+
         .courses-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* زيادة الحد الأدنى للعرض */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* تخفيض الحد الأدنى للعرض */
             gap: 20px;
             width: 95%;
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 20px auto;
         }
 
         .course-card {
@@ -90,7 +89,7 @@ background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Fi
             display: flex;
             flex-direction: column;
             text-align: center;
-            height: 100%; /* يضمن ملء البطاقة بالكامل */
+            height: 100%;
         }
 
         .course-card:hover {
@@ -100,23 +99,23 @@ background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Fi
 
         .course-card img {
             width: 100%;
-            height: 100%; /* زيادة ارتفاع الصورة */
+            height: 200px; /* تحديد ارتفاع للصورة */
             object-fit: contain; /* الحفاظ على الصورة كاملة داخل البطاقة */
         }
 
         .course-card-body {
-            padding: 20px;
+            padding: 15px;
         }
 
         .course-card h2 {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #000101;
             margin-bottom: 10px;
             font-weight: bold;
         }
 
         .course-card p {
-            font-size: 1em;
+            font-size: 0.9em;
             color: #0f0404;
             margin-bottom: 15px;
         }
@@ -124,13 +123,11 @@ background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Fi
         .btn-container {
             display: flex;
             justify-content: space-around;
-            margin-top: 15px;
-            gap: 10px; /* مسافة بين الأزرار */
+            margin-top: 10px;
+            gap: 10px;
             font-size: 0.8em;
             font-weight: bold;
-
-            
-            
+            flex-wrap: wrap; /* يسمح بتكديس الأزرار عند الحاجة */
         }
 
         .btn-course {
@@ -145,26 +142,25 @@ background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Fi
             transition: background 0.3s ease, transform 0.3s ease;
             color: rgb(255, 255, 255);
             background: linear-gradient(135deg, #b223bc, #00807e);
-            
         }
 
         .btn-course:hover {
             background-color: #ff5722;
             color: rgb(246, 215, 113);
-            border-color: #ff5722; /* تغيير لون البوردر عند التحويم */
+            border-color: #ff5722;
             text-decoration: none;
-
         }
 
         footer {
-            background: #0575E6;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #0575E6;
+            background: -webkit-linear-gradient(to left, #021B79, #0575E6);
+            background: linear-gradient(to left, #021B79, #0575E6);
             color: white;
             text-align: center;
             padding: 15px 0;
-            margin-top: 20px;
+            margin-top: auto;
         }
+
         footer p {
             margin: 0;
             font-size: 1em;
@@ -174,189 +170,135 @@ background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Fi
 <body>
     <header>
         📙 شروحات جامعة القصيم 📙
-    </header>
-    
 
-    <!-- إضافة الخط الأبيض المشع -->
+    </header>
+
     <hr class="glowing-line">
+
     <nav>
         <a href="index.html">الصفحة الرئيسية</a>
         <a href="services.html">خدماتي</a>
         <a href="Summaries.html">الملخصات</a>
         <a href="https://wa.me/967711848728">تواصل معي</a>
     </nav>
+
     <div class="courses-container">
         <!-- مقدمة في المعادلات التفاضلية -->
         <div class="course-card">
-            <img src="img/dee.jpg" alt="مقدمة في المعادلات التفاضلية">
+            <img src="img/dee.jpg" alt="تفاضل وتكامل 1">
             <div class="course-card-body">
                 <h2>مقدمة في المعادلات التفاضلية</h2>
                 <p>الشرح شامل للميد والفاينل</p>
                 <div class="btn-container">
-                    <a  class="btn-course"style="   background: linear-gradient(to right, #950da1, #670db6);color:white;padding: auto;">السعر  150 ريال</a>
-                    <a href="https://youtu.be/doIoHirofAw?si=RDpOt5GjL8Xe87cU" class="btn-course"style="background: #0F2027;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    ">الشرح التجريبي</a>
-                    <a href="https://wa.me/967711848728" class="btn-course"style=" background: #0575E6;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">تواصل معي</a>
+                    <a class="btn-course" style="background: linear-gradient(to right, #950da1, #670db6); color: white;">السعر 150 ريال</a>
+                    <a href="https://youtu.be/doIoHirofAw?si=RDpOt5GjL8Xe87cU" class="btn-course" style="background: #0F2027; background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">الشرح التجريبي</a>
+                    <a href="https://wa.me/967711848728" class="btn-course" style="background: #0575E6; background: -webkit-linear-gradient(to left, #021B79, #0575E6); background: linear-gradient(to left, #021B79, #0575E6);">تواصل معي</a>
                 </div>
             </div>
         </div>
 
         <!-- أسس رياضيات -->
         <div class="course-card">
-            <img src="img/ssss.jpg" alt="أسس رياضيات">
+            <img src="img/ssss.jpg" alt="اسس رياضيات">
             <div class="course-card-body">
-                <h2>أسس رياضيات</h2>
+                <h2>  اسس رياضيات</h2>
                 <p>الشرح شامل للميد والفاينل</p>
                 <div class="btn-container">
-                    <a class="btn-course"style="   background: linear-gradient(to right, #950da1, #670db6);color:white;">السعر 100 ريال</a>
-                    <a href="https://youtu.be/WcMjodbGIxg?si=XNccy0jfhdmSZGUr" class="btn-course"style="background: #0F2027;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    ">الشرح التجريبي</a>
-                    <a href="https://wa.me/967711848728" class="btn-course"style=" background: #0575E6;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">تواصل معي</a>
+                    <a class="btn-course" style="background: linear-gradient(to right, #950da1, #670db6); color: white;">السعر 100 ريال</a>
+                    <a href="https://youtu.be/WcMjodbGIxg?si=E-TAjL_2IZl6TTqx" class="btn-course" style="background: #0F2027; background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">الشرح التجريبي</a>
+                    <a href="https://wa.me/967711848728" class="btn-course" style="background: #0575E6; background: -webkit-linear-gradient(to left, #021B79, #0575E6); background: linear-gradient(to left, #021B79, #0575E6);">تواصل معي</a>
                 </div>
             </div>
         </div>
+        
+              <!-- أسس رياضيات -->
+              <div class="course-card">
+                <img src="img/q.jpg" alt="  مقدمة هندسة ">
+                <div class="course-card-body">
+                    <h2>    مقدمة هندسة </h2>
+                    <p>الشرح شامل للميد والفاينل</p>
+                    <div class="btn-container">
+                        <a class="btn-course" style="background: linear-gradient(to right, #950da1, #670db6); color: white;">السعر 100 ريال</a>
+                        <a href="https://youtu.be/PJMHk9SLREI?si=Yx-hT1M4gwUSg98y" class="btn-course" style="background: #0F2027; background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">الشرح التجريبي</a>
+                        <a href="https://wa.me/967711848728" class="btn-course" style="background: #0575E6; background: -webkit-linear-gradient(to left, #021B79, #0575E6); background: linear-gradient(to left, #021B79, #0575E6);">تواصل معي</a>
+                    </div>
+                </div>
+            </div>
 
-        <!-- مقدمة هندسة -->
-        <div class="course-card">
-            <img src="img/q.jpg" alt="مقدمة هندسة"style="width: 100%;
-            height: 100%;padding: -30px;margin: top -30px; ">
-            <div class="course-card-body">
-                <h2>مقدمة هندسة</h2>
-                <p>الشرح شامل للميد والفاينل</p>
-                <div class="btn-container">
-                    <a class="btn-course"style=" background: linear-gradient(to right, #950da1, #670db6);color:white;">السعر 100 ريال</a>
-                    <a href="https://youtu.be/PJMHk9SLREI?si=ajIsVcUt2RDmdZT6" class="btn-course"style="background: #0F2027;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    ">الشرح التجريبي</a>
-                    <a href="https://wa.me/967711848728" class="btn-course"style=" background: #0575E6;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">تواصل معي</a>
-                </div>
-            </div>
-        </div>
 
-        <!-- جبر خطي -->
-        <div class="course-card">
-            <img src="img/jabrek.png" alt="جبر خطي">
-            <div class="course-card-body">
-                <h2>جبر خطي</h2>
-                <p>الشرح شامل للميد والفاينل</p>
-                <div class="btn-container">
-                    <a  class="btn-course"style="background: linear-gradient(to right, #950da1, #670db6);color:white;">السعر 150 ريال </a>
-                    <a href="https://youtu.be/yJJZalUTk00" class="btn-course"style="background: #0F2027;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    ">الشرح التجريبي</a>
-                    <a href="https://wa.me/967711848728" class="btn-course"style=" background: #0575E6;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">تواصل معي</a>
+              <!-- أسس رياضيات -->
+              <div class="course-card">
+                <img src="img/jabrek.png" alt="  جبر خطي  ">
+                <div class="course-card-body">
+                    <h2>     جبر خطي                    </h2>
+                    <p>الشرح شامل للميد والفاينل</p>
+                    <div class="btn-container">
+                        <a class="btn-course" style="background: linear-gradient(to right, #950da1, #670db6); color: white;">السعر 150 ريال</a>
+                        <a href="https://youtu.be/yJJZalUTk00?si=H5gg_SvD5ntaE5Ci" class="btn-course" style="background: #0F2027; background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">الشرح التجريبي</a>
+                        <a href="https://wa.me/967711848728" class="btn-course" style="background: #0575E6; background: -webkit-linear-gradient(to left, #021B79, #0575E6); background: linear-gradient(to left, #021B79, #0575E6);">تواصل معي</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- نظرية أعداد -->
-        <div class="course-card">
-            <img src="img/zz.jpeg" alt="نظرية أعداد">
-            <div class="course-card-body">
-                <h2>نظرية أعداد</h2>
-                <p>الشرح شامل للميد والفاينل</p>
-                <div class="btn-container">
-                    <a  class="btn-course"style="   background: linear-gradient(to right, #950da1, #670db6);color:white;">السعر 150 ريال</a>
-                    <a href="https://youtu.be/H2-72_2tC-s?si=B_w9tpzN3Rjqnolx" class="btn-course"style="background: #0F2027;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    ">الشرح التجريبي</a>
-                    <a href="https://wa.me/967711848728" class="btn-course"style=" background: #0575E6;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">تواصل معي</a>
+              <!-- أسس رياضيات -->
+              <div class="course-card">
+                <img src="img/zz.jpeg" alt="  نظرية أعداد  ">
+                <div class="course-card-body">
+                    <h2>  نظرية أعداد                   </h2>
+                    <p>الشرح شامل للميد والفاينل</p>
+                    <div class="btn-container">
+                        <a class="btn-course" style="background: linear-gradient(to right, #950da1, #670db6); color: white;">السعر 150 ريال</a>
+                        <a href="https://youtu.be/H2-72_2tC-s?si=jO9Du3TyuMVUCzz_" class="btn-course" style="background: #0F2027; background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">الشرح التجريبي</a>
+                        <a href="https://wa.me/967711848728" class="btn-course" style="background: #0575E6; background: -webkit-linear-gradient(to left, #021B79, #0575E6); background: linear-gradient(to left, #021B79, #0575E6);">تواصل معي</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- معادلات تفاضلية جزئية -->
-        <div class="course-card">
-            <img src="img/dd.jpeg" alt="معادلات تفاضلية جزئية">
-            <div class="course-card-body">
-                <h2>معادلات تفاضلية جزئية</h2>
-                <p>الشرح شامل للميد والفاينل</p>
-                <div class="btn-container">
-                    <a  class="btn-course"style="   background: linear-gradient(to right, #950da1, #670db6);color:white;">السعر 200 ريال</a>
-                    <a href="https://youtu.be/QDFvVTestHM?si=9tQzkxOxZAMWnB2w" class="btn-course"style="background: #0F2027;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    ">الشرح التجريبي</a>
-                    <a href="https://wa.me/967711848728" class="btn-course"style=" background: #0575E6;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">تواصل معي</a>
-                </div>
-            </div>
-        </div>
+                          <!-- أسس رياضيات -->
+                          <div class="course-card">
+                            <img src="img/dd.jpeg" alt="  معادلات تفاضلية جزئية
+                            ">
+                            <div class="course-card-body">
+                                <h2>  معادلات تفاضلية جزئية         </h2>
+                                <p>الشرح شامل للميد والفاينل</p>
+                                <div class="btn-container">
+                                    <a class="btn-course" style="background: linear-gradient(to right, #950da1, #670db6); color: white;">السعر 200 ريال</a>
+                                    <a href="https://youtu.be/QDFvVTestHM?si=kZ_AD8dd3FirbnXM" class="btn-course" style="background: #0F2027; background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">الشرح التجريبي</a>
+                                    <a href="https://wa.me/967711848728" class="btn-course" style="background: #0575E6; background: -webkit-linear-gradient(to left, #021B79, #0575E6); background: linear-gradient(to left, #021B79, #0575E6);">تواصل معي</a>
+                                </div>
+                            </div>
+                        </div>
 
-        <!-- تفاضل وتكامل ١ -->
-        <div class="course-card">
-            <img src="img/tafadool.jpeg" alt="تفاضل وتكامل ١">
-            <div class="course-card-body">
-                <h2>تفاضل وتكامل ١</h2>
-                <p>الشرح شامل للميد والفاينل</p>
-                <div class="btn-container">
-                    <a  class="btn-course"style="   background: linear-gradient(to right, #950da1, #670db6);color:white;">السعر 150 ريال</a>
-                    <a href="https://youtu.be/mPS1vJ03lKY?si=NOqCislTTvYdmJvO" class="btn-course"style="background: #0F2027;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    ">الشرح التجريبي</a>
-                    <a href="https://wa.me/967711848728" class="btn-course"style=" background: #0575E6;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">تواصل معي</a>
-                </div>
-            </div>
-        </div>
+                                  <!-- أسس رياضيات -->
+                                  <div class="course-card">
+                                    <img src="img/tafadool.jpeg" alt="    تفاضل وتكامل ١ ">
+                                    <div class="course-card-body">
+                                        <h2>  تفاضل وتكامل ١    </h2>
+                                        <p>الشرح شامل للميد والفاينل</p>
+                                        <div class="btn-container">
+                                            <a class="btn-course" style="background: linear-gradient(to right, #950da1, #670db6); color: white;">السعر 150 ريال</a>
+                                            <a href="https://youtu.be/mPS1vJ03lKY?si=6La_L9ChsxPDhSZK" class="btn-course" style="background: #0F2027; background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">الشرح التجريبي</a>
+                                            <a href="https://wa.me/967711848728" class="btn-course" style="background: #0575E6; background: -webkit-linear-gradient(to left, #021B79, #0575E6); background: linear-gradient(to left, #021B79, #0575E6);">تواصل معي</a>
+                                        </div>
+                                    </div>
+                                </div>
 
-        <!-- تفاضل وتكامل ٢ -->
-        <div class="course-card">
-            <img src="img/qaseem.jpeg" alt="تفاضل وتكامل ٢">
-            <div class="course-card-body">
-                <h2>تفاضل وتكامل ٢</h2>
-                <p>الشرح شامل للميد والفاينل</p>
-                <div class="btn-container">
-                    <a  class="btn-course"style="   background: linear-gradient(to right, #950da1, #670db6);color:white;">السعر 150 ريال</a>
-                    <a href="https://youtu.be/wopTgmNAGVc?si=ZrbX94Zas5irjsS3" class="btn-course"style="background: #0F2027;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    ">الشرح التجريبي</a>
-                    <a href="https://wa.me/967711848728" class="btn-course"style=" background: #0575E6;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">تواصل معي</a>
-                </div>
-            </div>
-        </div>
+                                                                    <!-- أسس رياضيات -->
+                    <div class="course-card">
+                <img src="img/qaseem.jpeg" alt="    تفاضل وتكامل 2 ">
+                    <div class="course-card-body">
+                <h2>  تفاضل وتكامل 2    </h2>
+             <p>الشرح شامل للميد والفاينل</p>
+              <div class="btn-container">
+            <a class="btn-course" style="background: linear-gradient(to right, #950da1, #670db6); color: white;">السعر 150 ريال</a>
+      <a href="https://youtu.be/wopTgmNAGVc?si=0B1zQK9kWRmlbA7F" class="btn-course" style="background: #0F2027; background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); background: linear-gradient(to right, #2C5364, #203A43, #0F2027);">الشرح التجريبي</a>
+              <a href="https://wa.me/967711848728" class="btn-course" style="background: #0575E6; background: -webkit-linear-gradient(to left, #021B79, #0575E6); background: linear-gradient(to left, #021B79, #0575E6);">تواصل معي</a>
+           </div>
+     </div>
+     </div>
+                    
+            
 
-        <!-- حساب المتجهات -->
-        <div class="course-card">
-            <img src="img/factor.jpg" alt="حساب المتجهات">
-            <div class="course-card-body">
-                <h2>حساب المتجهات</h2>
-                <p>الشرح شامل للميد والفاينل</p>
-                <div class="btn-container">
-                    <a  class="btn-course"style="   background: linear-gradient(to right, #950da1, #670db6);color:white;">السعر 219 ريال</a>
-                    <a href="https://youtu.be/TKF27OxOLZs?si=gBzvn3-XwfWMmlug" class="btn-course"style="background: #0F2027;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-                    ">الشرح التجريبي</a>
-                    <a href="https://wa.me/967711848728" class="btn-course"style=" background: #0575E6;  /* fallback for old browsers */
-                    background: -webkit-linear-gradient(to left, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
-                    background: linear-gradient(to left, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">تواصل معي</a>
-                </div>
-            </div>
-        </div>
     </div>
 
     <footer>
